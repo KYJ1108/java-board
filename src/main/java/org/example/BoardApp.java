@@ -10,6 +10,9 @@ public class BoardApp {
         // 변수에는 하나의 값만 저장 가능하므로 여러개의 게시물을 저장하려면 ArrayList를 사용한다.
         ArrayList<String> titleList = new ArrayList<>();
         ArrayList<String> bodyList = new ArrayList<>();
+        ArrayList<Integer> idList = new ArrayList<>(); // 번호
+
+        int articleId = 1; // 게시물 번호 // 시작 번호를 1로 지정
 
 //        String title = "";
 //        String content = "";
@@ -32,6 +35,9 @@ public class BoardApp {
                 System.out.print("게시물 내용을 입력해 주세요 : ");
                 String content = scan.nextLine();
                 bodyList.add(content);
+                
+                idList.add(articleId); // 게시물이 생성될 때마다 번호를 생성해서 저장
+                articleId++; // 게시물이 생성될 때마다 번호를 증가
 
                 System.out.println("게시물이 등록되었습니다.");
             }
@@ -39,7 +45,8 @@ public class BoardApp {
                 System.out.println("================");
                 for (int i=0; i<titleList.size(); i++){
                     String title = titleList.get(i);
-                    System.out.println("번호 : "+(i+1));
+                    int id = idList.get(i);
+                    System.out.println("번호 : "+ id);
                     System.out.printf("제목 : %s\n", title);
                     System.out.println("================");
                 }
@@ -58,6 +65,15 @@ public class BoardApp {
                 // id로 게시물 찾기 // 인덱스로 찾아서 수정
                 titleList.set(id -1, newTitle);
                 bodyList.set(id -1, newBody);
+            }
+            else if (cmd.equals("delete")) {
+                System.out.print("삭제할 게시물 번호 : ");
+                int id = Integer.parseInt(scan.nextLine());
+
+                titleList.remove(id -1);
+                bodyList.remove(id-1);
+
+                System.out.printf("%d번 게시물이 삭제되었습니다.\n", id);
             }
         }
     }
