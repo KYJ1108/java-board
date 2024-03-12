@@ -13,11 +13,11 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         ArrayList<Post> posts = new ArrayList<>();
         
-        int postCount = 1; // 시작번호 1, 밖에 있는 이유는 반복문 안에 있으면 반복됨.
+        int lastPostCount = 1; // 시작번호 1, 밖에 있는 이유는 반복문 안에 있으면 반복됨.
 
-        posts.add(new Post(1, "안녕하세요 반갑습니다. 자바공부중이에요.",""));
-        posts.add(new Post(2, "안녕하세요 반갑습니다. 자바 공부중이에요",""));
-        posts.add(new Post(3, "정처기 따야되나요?", ""));
+        posts.add(new Post(1, "안녕하세요 반갑습니다. 자바공부중이에요.","Hello"));
+        posts.add(new Post(2, "안녕하세요 반갑습니다. 자바 공부중이에요","return"));
+        posts.add(new Post(3, "정처기 따야되나요?", "yes"));
 
 
         // 반복 횟수 정할 수 없음 => 무한 반복 구조
@@ -44,11 +44,11 @@ public class Main {
                 String formattedDateTime = now.format(formatter);
 
                 // 게시물 내용
-                Post post = new Post(postCount, title, content, formattedDateTime);
+                Post post = new Post(lastPostCount, title, content, formattedDateTime);
                 // 내용 저장
                 posts.add(post);
                 // 게시물 번호
-                postCount++;
+                lastPostCount++;
 
 
 
@@ -65,6 +65,26 @@ public class Main {
                     System.out.println("====================");
                 }
             }
+            // 키워드로 게시물 검색
+            else if (cmd.equals("search")){
+                System.out.print("검색 키워드를 입력해주세요 : ");
+                String keyword = scan.nextLine();
+                boolean found = false;
+                for (Post post : posts){
+                    if (post.getTitle().contains(keyword)){
+                        found = true;
+                        System.out.println("=====================");
+                        System.out.println("번호 : "+post.getNumber());
+                        System.out.println("제목 : "+post.getTitle());
+                        System.out.println("=====================");
+                    }
+                }
+                if (!found) {
+                    System.out.println("=====================");
+                    System.out.println("검색 결과가 없습니다.");
+                    System.out.println("=====================");
+                }
+            }
             // 게시물 수정
             else if (cmd.equals("update")){
                 System.out.print("수정할 게시물 번호 : ");
@@ -78,6 +98,7 @@ public class Main {
                 // 해당 번호 게시물 가져오기.
                 // -1 하는 이유는 인덱스는 0부터 시작이기 때문에  n버째 요소의 인데스는 n-1
                 Post post = posts.get(number-1);
+
                 // 게시물 수정
                 post.setTitle(newTitle);
                 post.setContent(newContent);
@@ -106,6 +127,7 @@ public class Main {
                     System.out.println("제목 : "+ post.getTitle());
                     System.out.println("내용 : "+ post.getContent());
                     System.out.println("등록날짜 : "+post.getCreatedAt());
+                    System.out.println("조회수 : "+post.getViews());
                     System.out.println("======================");
                 }else {
                     System.out.println("존재하지 않는 게시물 번호입니다.");
@@ -129,6 +151,7 @@ class Post {
     private String content;
     private int number; // 게시물 번호
     private String createdAt;
+    private int views; // 조회수
     
 
     public Post(int number, String title, String content) {
@@ -136,6 +159,7 @@ class Post {
         this.title = title;
         this.content = content;
         this.createdAt = null; // 생성 시간을 초기화
+        this.views = 0; // 초기 조회수 0으로 설정
     }
     // 생성자 오버로딩
     public Post(int number, String title, String content, String createdAt) {
@@ -163,4 +187,6 @@ class Post {
         this.content = content;
     }
     public String getCreatedAt(){return createdAt;}
+    public int getViews(){return views;}
+    public void incrementViews(){views++;}
 }
