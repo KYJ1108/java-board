@@ -13,10 +13,10 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         ArrayList<Post> posts = new ArrayList<>();
         
-        int lastPostCount = 1; // 시작번호 1, 밖에 있는 이유는 반복문 안에 있으면 반복됨.
+        int lastPostCount = 4; // 시작번호 1, 밖에 있는 이유는 반복문 안에 있으면 반복됨.
 
-        posts.add(new Post(1, "안녕하세요 반갑습니다. 자바공부중이에요.","Hello"));
-        posts.add(new Post(2, "안녕하세요 반갑습니다. 자바 공부중이에요","return"));
+        posts.add(new Post(1, "안녕하세요 반갑습니다. 자바공부중이에요.","자바 너무 재밌어요!!"));
+        posts.add(new Post(2, "자바 질문좀 할게요~","return"));
         posts.add(new Post(3, "정처기 따야되나요?", "yes"));
 
 
@@ -122,6 +122,9 @@ public class Main {
                 // 1~n 번째 사이의 숫자가 아니면 else문
                 if (number > 0 && number <= posts.size()){ // posts.size는 게시물 리스트 몇개인지
                     Post post = posts.get(number - 1);
+                    // 조회수 증가
+                    post.incrementViews();
+
                     System.out.println("======================");
                     System.out.println("번호 : "+ post.getNumber());
                     System.out.println("제목 : "+ post.getTitle());
@@ -158,8 +161,14 @@ class Post {
         this.number = number;
         this.title = title;
         this.content = content;
-        this.createdAt = null; // 생성 시간을 초기화
+        this.createdAt = getCurrentDateTime(); // 생성 시간을 초기화
         this.views = 0; // 초기 조회수 0으로 설정
+    }
+    // 현재 날짜와 시간을 문자열로 반환하는 메서드
+    public String getCurrentDateTime(){
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+        return now.format(formatter);
     }
     // 생성자 오버로딩
     public Post(int number, String title, String content, String createdAt) {
