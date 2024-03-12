@@ -39,15 +39,25 @@ public class BoardApp {
                 System.out.println("================");
                 for (int i=0; i<titleList.size(); i++){
                     String title = titleList.get(i);
+                    System.out.println("번호 : "+(i+1));
                     System.out.printf("제목 : %s\n", title);
-
-                    String content = bodyList.get(i);
-                    System.out.printf("내용 : %s\n", content);
-                    System.out.println("=================");
+                    System.out.println("================");
                 }
             }
             else if (cmd.equals("update")) {
+                System.out.print("수정할 게시문 번호 : ");
+                int id = Integer.parseInt(scan.nextLine());
+                // 1-> index : 0 // 2 -> index : 1
 
+                System.out.print("새로운 제목 : ");
+                String newTitle = scan.nextLine();
+
+                System.out.print("새로운 내용 : ");
+                String newBody = scan.nextLine();
+
+                // id로 게시물 찾기 // 인덱스로 찾아서 수정
+                titleList.set(id -1, newTitle);
+                bodyList.set(id -1, newBody);
             }
         }
     }
