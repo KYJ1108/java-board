@@ -31,7 +31,10 @@ public class Detail {
                 switch (num) {
                     case 1:
                         System.out.println("==== 1. 댓글 등록 ====");
-                        System.out.println("======================");
+                        System.out.print("댓글 내용 : ");
+                        String comment = scan.nextLine();
+                        post.addComment(comment); // 댓글 추가
+                        System.out.println("댓글이 성공적으로 등록되었습니다.");
                         break;
                     case 2:
                         System.out.println("==== 2. 추천 ====");
