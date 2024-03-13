@@ -1,12 +1,10 @@
-package org.example;
+package org.example.doardApp;
 
 public class Article {
     private int id; //번호
     private String title; // 제목
     private String body; //내용
-    public Article(){
 
-    }
     public Article(int id, String title, String body){
         this.id = id;
         this.title = title;

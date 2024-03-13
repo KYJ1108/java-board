@@ -1,4 +1,4 @@
-package org.example;
+package org.example.doardApp;
 
 import java.util.ArrayList;
 import java.util.Scanner;

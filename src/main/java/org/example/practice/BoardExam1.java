@@ -1,10 +1,10 @@
-package org.example;
+package org.example.practice;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BoardExam1 {
-    public static void main(String[] args) {
+    public void run() {
         Scanner scan = new Scanner(System.in);
 
         ArrayList<String> titleList = new ArrayList<>();
@@ -39,6 +39,11 @@ public class BoardExam1 {
                     System.out.printf("내용 : %s\n", body);
                     System.out.println("=====================");
                 }
+            }
+            else if (cmd.equals("update")){
+                System.out.print("수정할 게시물 번호 : ");
+
+                
             }
         }
     }
