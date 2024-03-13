@@ -1,7 +1,10 @@
 package org.example.doardApp;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class BoardApp {
     ArrayList<Article> articleList = new ArrayList<Article>(); // 인스턴스 변수
@@ -29,10 +32,18 @@ public class BoardApp {
                 System.out.print("게시물 내용을 입력해 주세요 : ");
                 String content = scan.nextLine();
 
-                // 모든 매개변수를 받는 생성자 이용
-                Article article = new Article(latestArticleId, title, content);
-                articleList.add(article);
+                LocalDateTime now = LocalDateTime.now();
 
+                // 날짜와 시간의 형식을 지정합니다. 여기서는 연-월-일 시:분:초 형식을 사용합니다.
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy.MM.dd HH:mm:ss");
+
+                // 지정한 형식으로 날짜와 시간을 출력합니다.
+                String formattedDate = now.format(formatter);
+
+                // 모든 매개변수를 받는 생성자 이용
+                Article article = new Article(latestArticleId, title, content, formattedDate);
+
+                articleList.add(article);
                 System.out.println("게시물이 등록되었습니다.");
 
                 latestArticleId++; // 게시물이 생성될 때마다 번호를 증가
@@ -85,7 +96,7 @@ public class BoardApp {
                 articleList.remove(index);
                 System.out.printf("%d번 게시물이 삭제되었습니다.\n", inputId);
             } else if (cmd.equals("detail")) {
-                System.out.println("상세보기 할 게시물 번호를 입력해주세요 : ");
+                System.out.print("상세보기 할 게시물 번호를 입력해주세요 : ");
                 int inputId = Integer.parseInt(scan.nextLine());
                 int index = findIndexById(inputId);
                 if (index == -1) {
@@ -95,9 +106,10 @@ public class BoardApp {
                 Article article = articleList.get(index);
 
                 System.out.println("=======================");
-                System.out.println("번호 : "+article.getId());
-                System.out.println("제목 : "+article.getTitle());
-                System.out.println("내용 : "+article.getBody());
+                System.out.println("번호 : " + article.getId());
+                System.out.println("제목 : " + article.getTitle());
+                System.out.println("내용 : " + article.getBody());
+                System.out.println("등록날짜 : " + article.getRegDate());
                 System.out.println("=======================");
             }
         }
