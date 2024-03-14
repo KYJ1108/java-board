@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e13b50f-bdde-4255-aade-041c4e5c56f9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/douk/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/doardApp/BoardApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/doardApp/BoardApp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,7 @@
     "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
     "Application.Practice.executor": "Run",
+    "Application.Test.executor": "Run",
     "Application.correct.executor": "Run",
     "Gradle.java-board [:Main.main()].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -74,7 +75,7 @@
     "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.correct">
+  <component name="RunManager" selected="Application.Test">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.boardExam.Main" />
       <module name="java-board.main" />
@@ -114,6 +115,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.douk.Test" />
+      <module name="java-board.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.douk.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="correct" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.doardApp.correct" />
       <module name="java-board.main" />
@@ -129,8 +143,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Test" />
         <item itemvalue="Application.correct" />
-        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Practice" />
         <item itemvalue="Application.Main" />
       </list>
