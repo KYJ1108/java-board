@@ -2,6 +2,7 @@ package org.example.boardExam;
 
 import org.example.boardExam.Post; // Post 클래스 import
 
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -37,7 +38,7 @@ public class Detail {
                         System.out.println("==== 1. 댓글 등록 ====");
                         System.out.print("댓글 내용 : ");
                         String comment = scan.nextLine();
-                        post.addComment(comment); // 댓글 추가 (Post Class에 있음.)
+                        post.addComment(comment); // 댓글 추가 (Cooment Class에 있음.)
 
                         System.out.println("댓글이 성공적으로 등록되었습니다.");
                         post.printPost(); // 댓글추가한거 보여줌
