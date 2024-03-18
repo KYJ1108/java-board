@@ -1,4 +1,4 @@
-package org.example.doardApp;
+package org.example.doardApp.domain;
 
 import java.time.LocalDateTime;
 
@@ -14,6 +14,16 @@ public class Article {
         this.body = body;
         this.regDate = regDate;
     }
+    public void increaseHit(){
+        this.hit++;
+    }
+    public int getHit() {
+        return hit;
+    }
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
     public int getId(){
         return id;
     }

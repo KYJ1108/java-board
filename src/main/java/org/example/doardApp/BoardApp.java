@@ -1,7 +1,8 @@
 package org.example.doardApp;
 
+import org.example.doardApp.domain.Article;
+
 import java.util.ArrayList;
-import java.util.Locale;
 import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
