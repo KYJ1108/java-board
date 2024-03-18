@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8e13b50f-bdde-4255-aade-041c4e5c56f9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/boardExam/CommentManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/boardExam/PostPrinter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/boardExam/ViewCounter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/douk/Test2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/doardApp/ArticleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/doardApp/base/CommonUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/boardExam/Detail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/boardExam/Detail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/boardExam/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/boardExam/Post.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +76,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.doardApp" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.boardExam.Main" />
